@@ -1,2 +1,3 @@
-echo "git"
+echo "giteqtvuairehiuerghuregherug"
+ls /
 ip a

@@ -3,4 +3,4 @@ ls /
 ip a
 cd /home/dima
 pwd
-mkdir test-hello
+apt update -y

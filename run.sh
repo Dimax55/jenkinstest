@@ -1,4 +1,3 @@
-echo "giteqtvuairehiuerghuregherug"
+echo "hello, this is test stage (pipeline) ----"
 ls /
 ip a
-apt update -Y

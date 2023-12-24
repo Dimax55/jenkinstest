@@ -4,4 +4,3 @@ ip a
 cd /home/dima
 pwd
 apt update -y
-apt upgrade -y

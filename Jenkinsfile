@@ -7,14 +7,14 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Hello1') {
+        stage('shell1') {
             steps {
-                echo 'Hello World'
+                sh 'ls /etc/natplan'
             }
         }
         stage('SH') {
             steps {
-                bash run.sh
+                sh 'ls /home/'
             }
         }
     }

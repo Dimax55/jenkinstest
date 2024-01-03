@@ -9,7 +9,7 @@ pipeline {
         }
         stage('shell1') {
             steps {
-                sh 'ls /etc/natplan'
+                sh 'ls /etc/'
             }
         }
         stage('SH') {

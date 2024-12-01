@@ -38,7 +38,7 @@ pipeline {
 
         stage('run cadvisor') {
             steps {
-                sh 'docker run -d --name=13 dimax555/jenkins:cadvisor-6'
+                sh 'docker run -d --publish=8081:8080 --name=13 dimax555/jenkins:cadvisor-6'
             }
         }
 

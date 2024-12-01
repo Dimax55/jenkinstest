@@ -48,6 +48,12 @@ pipeline {
             }
         }
 
+        stage('run database') {
+            steps {
+                sh 'docker run -d -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Qwerty-1" --name=17 dimax555/web-app:database'
+            }
+        }
+
         stage('run front') {
             steps {
                 sh 'docker run -d --name=15 dimax555/web-app:frontend'
@@ -60,11 +66,7 @@ pipeline {
             }
         }
 
-        stage('run database') {
-            steps {
-                sh 'docker run --name=17 dimax555/web-app:database'
-            }
-        }
+
 
     }
 }

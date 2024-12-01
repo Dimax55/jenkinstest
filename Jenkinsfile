@@ -26,7 +26,7 @@ pipeline {
 
         stage('run grafana') {
             steps {
-                sh 'docker run --name=11 dima555/jenkins:grafana-3'
+                sh 'docker run --name=11 dimax555/jenkins:grafana-3'
             }
         }
 

@@ -23,6 +23,8 @@ pipeline {
                         }
                     }
                 }
+                echo " ============== docker login completed =================="
+            }
 
         
        stage('run grafana') {

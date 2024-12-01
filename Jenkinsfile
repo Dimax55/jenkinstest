@@ -2,11 +2,29 @@ pipeline {
     agent any
 
     stages {
+
+        
         stage('Hello') {
             steps {
                 echo 'Hello World'
             }
         }
+
+
+        
+        stage("docker login") {
+            steps {
+                echo " ============== docker login =================="
+                withCredentials([usernamePassword(credentialsId: 'test123', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    script {
+                        def loginResult = sh(script: "docker login -u $USERNAME -p $PASSWORD", returnStatus: true)
+                        if (loginResult != 0) {
+                            error "Failed to log in to Docker Hub. Exit code: ${loginResult}"
+                        }
+                    }
+                }
+
+        
        stage('run grafana') {
             steps {
                 sh 'docker run --name=11 dima555/jenckins:grafana-3'

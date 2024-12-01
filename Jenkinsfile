@@ -26,37 +26,37 @@ pipeline {
 
         stage('run grafana') {
             steps {
-                sh 'docker run --name=11 dimax555/jenkins:grafana-3'
+                sh 'docker run -d --name=11 dimax555/jenkins:grafana-3'
             }
         }
 
         stage('run prometheus') {
             steps {
-                sh 'docker run --name=12 dimax555/jenkins:prometheus-4'
+                sh 'docker run -d --name=12 dimax555/jenkins:prometheus-4'
             }
         }
 
         stage('run cadvisor') {
             steps {
-                sh 'docker run --name=13 dimax555/jenkins:cadvisor-6'
+                sh 'docker run -d --name=13 dimax555/jenkins:cadvisor-6'
             }
         }
 
         stage('run node-exporter') {
             steps {
-                sh 'docker run --name=14 dimax555/jenkins:node-exporter-5'
+                sh 'docker run -d --name=14 dimax555/jenkins:node-exporter-5'
             }
         }
 
         stage('run front') {
             steps {
-                sh 'docker run --name=15 dimax555/web-app:frontend'
+                sh 'docker run -d --name=15 dimax555/web-app:frontend'
             }
         }
 
         stage('run back') {
             steps {
-                sh 'docker run --name=16 dimax555/web-app:backend'
+                sh 'docker run -d --name=16 dimax555/web-app:backend'
             }
         }
 
